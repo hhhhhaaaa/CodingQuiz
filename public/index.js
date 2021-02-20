@@ -1,5 +1,6 @@
 // Listing of general use variables
 const begin = $("#begin");
+const clear = $(".clear");
 const container = $(".section");
 const end = $("#end")
 const finalScore = $(".highscore");
@@ -10,7 +11,6 @@ const qp = $(".quizPage");
 const qpLink = $(".qpLink");
 const scoreboard = $("#scoreboard")
 const submission = $("#submission");
-const submitArray = [];
 const time = $(".time");
 
 // Array used to manage sections
@@ -19,10 +19,11 @@ const buttonArray = [
   end
 ]
 
-// Variables to manage the score, highscore, and timer respectively
+// Variables to manage the score, highscore, timer, and submitArray respectively
 let score = 0;
 let highscore = 0;
 let timer = 60;
+let submitArray = [];
 
 /**
  * Upon clicking on the Begin button...
@@ -171,4 +172,10 @@ hpLink.on("click", () => {
     qp.css("display", "none");
     hp.css("display", "inline");
   }
+});
+
+// Clear score button
+clear.on("click", () => {
+  submitArray = [];
+  scoreboard.empty();
 });
