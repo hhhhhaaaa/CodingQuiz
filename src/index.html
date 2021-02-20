@@ -9,101 +9,83 @@
 </head>
 
 <body>
-    <nav>
-        <a href="./highscores.html">
-            HighScores
-        </a>
-        <p>
-            Time Left:
-        </p>
-    </nav>
-    <section id="begin" class="bttn" data-type="information" data-visible="visible">
-        Begin
+    <section class="quizPage">
+        <nav>
+            <p class="hpLink">
+                HighScores
+            </p>
+            <p>
+                Time Left:
+                <div class="time">60</div>
+            </p>
+        </nav>
+        <section id="begin" class="section" data-type="information" data-visible="visible">
+            <button>
+                Begin
+            </button>
+        </section>
+        <section id="question1" class="section" data-type="question" data-visible="hidden">
+            <h1>What number do arrays start counting with?</h1>
+            <button class="incorrect bttn">1.) -1</button>
+            <button class="correct bttn">2.) 0</button>
+            <button class="incorrect bttn">3.) 1</button>
+            <button class="incorrect bttn">4.) 2</button>
+        </section>
+        <section id="question2" class="section" data-type="question" data-visible="hidden">
+            <h1>Which of these is not a loop?</h1>
+            <button class="incorrect bttn">1.) for</button>
+            <button class="incorrect bttn">2.) for...in</button>
+            <button class="incorrect bttn">3.) while</button>
+            <button class="correct bttn">4.) array</button>
+        </section>
+        <section id="question3" class="section" data-type="question" data-visible="hidden">
+            <h1>Which of these is not falsey values?</h1>
+            <button class="incorrect bttn">1.) undefined</button>
+            <button class="correct bttn">2.) none</button>
+            <button class="incorrect bttn">3.) false</button>
+            <button class="incorrect bttn">4.) null</button>
+        </section>
+        <section id="question4" class="section" data-type="question" data-visible="hidden">
+            <h1>Which of these does not establish a variable?</h1>
+            <button class="correct bttn">1.) for</button>
+            <button class="incorrect bttn">2.) var</button>
+            <button class="incorrect bttn">3.) let</button>
+            <button class="incorrect bttn">4.) const</button>
+        </section>
+        <section id="question5" class="section" data-type="question" data-visible="hidden">
+            <h1>What is not one of the three languages we are using to code?</h1>
+            <button class="correct bttn">1.) Python</button>
+            <button class="incorrect bttn">2.) Javascript</button>
+            <button class="incorrect bttn">3.) HTML</button>
+            <button class="incorrect bttn">4.) CSS</button>
+        </section>
+        <section id="end" class="section" data-type="information" data-visible="hidden">
+            Congratulations!
+            <br>
+            Please submit your initials for the highscore board.
+            <br>
+            Your final score is:
+            <div class="highscore"></div>
+            <label for="initials">Initials:</label>
+            <input type="text" id="initials">
+            <input type="submit" id="submission">
+        </section>
+        <br>
+        <section class="lose" data-visible="hidden">
+            Wrong
+        </section>
+        <section class="win" data-visible="hidden">
+            Right
+        </section>
     </section>
-    <section id="question1" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
+    <section class="highscoresPage">
+        <nav>
+            <p class="qpLink">
+                Main
+            </p>
+        </nav>
+        <div id="scoreboard"></div>
     </section>
-    <section id="question2" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question3" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question4" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question5" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question6" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question7" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question8" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question9" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="question10" class="bttn" data-type="question" data-visible="hidden">
-        <h1></h1>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <p id="tellMe"></p>
-    </section>
-    <section id="end" class="bttn" data-type="information" data-visible="hidden">
-
-    </section>
-
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../public/index.js"></script>

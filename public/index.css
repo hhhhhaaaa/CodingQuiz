@@ -1,3 +1,11 @@
-[data-type="question"] {
-    visibility: hidden;
+[data-visible="hidden"] {
+    display: none;
+}
+
+[data-visible="visible"] {
+    display: inline;
+}
+
+.highscoresPage {
+    display: none;
 }
