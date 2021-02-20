@@ -19,10 +19,11 @@ const buttonArray = [
 
 let score = 0;
 let highscore = 0;
+let timer = 60;
 
 begin.on("click", function (event) {
+  throughEnd();
   // console.log("Begin click");
-  let timer = 60;
   const beginning = setInterval(() => {
     const endTime = end.data("visible");
     // console.log("Running");
@@ -82,9 +83,13 @@ container.on("click", function (event) {
     },
       1000
     );
+    
+    return timer = timer - 5;
   }
 });
 
+
+function throughEnd() {
 const findEnd = setInterval(() => {
   const endTime = end.data("visible");
   const countdown = time.text();
@@ -97,6 +102,7 @@ const findEnd = setInterval(() => {
     return highscore;
   }
 }, 1000);
+  }
 
 submission.on("click", () => {
   const inputText = initials.val();
@@ -111,8 +117,9 @@ submission.on("click", () => {
   begin.css("display", "inline");
   qp.css("display", "none");
   hp.css("display", "inline");
-  let score = 0;
-  let highscore = 0;
+  score = 0;
+  highscore = 0;
+  timer = 60;
   time.text(60);
   return;
 });
