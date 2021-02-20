@@ -17,4 +17,4 @@ https://hhhhhaaaa.github.io/CodingQuiz/
 4.) Check out the recent highscores on the Highscore Page.
 
 ## Final Screenshot
-![CodingQuiz](/public/CodingQuiz.png "CodingQuiz")
+![CodingQuiz](https://github.com/hhhhhaaaa/CodingQuiz/blob/main/public/CodingQuiz.PNG "CodingQuiz")
