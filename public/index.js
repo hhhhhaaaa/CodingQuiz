@@ -1,26 +1,38 @@
+// Listing of general use variables
 const begin = $("#begin");
 const container = $(".section");
 const end = $("#end")
 const finalScore = $(".highscore");
+const hp = $(".highscoresPage");
+const hpLink = $(".hpLink");
 const initials = $("#initials");
+const qp = $(".quizPage");
+const qpLink = $(".qpLink");
 const scoreboard = $("#scoreboard")
 const submission = $("#submission");
 const submitArray = [];
 const time = $(".time");
-const hpLink = $(".hpLink");
-const qpLink = $(".qpLink");
-const qp = $(".quizPage");
-const hp = $(".highscoresPage");
 
+// Array used to manage sections
 const buttonArray = [
   begin, $("#question1"), $("#question2"), $("#question3"), $("#question4"), $("#question5"),
   end
 ]
 
+// Variables to manage the score, highscore, and timer respectively
 let score = 0;
 let highscore = 0;
 let timer = 60;
 
+/**
+ * Upon clicking on the Begin button...
+ * throughEnd() is called (see throughEnd for details)
+ * The interval to check on the timer is started.
+ * Runs checks to make sure the end isn't here yet, else stopping the interval.
+ * Decreases the timer.
+ * Sets timer to be seen.
+ * If the timer hits 0, sets up the End and stops the interval.
+*/
 begin.on("click", function (event) {
   throughEnd();
   // console.log("Begin click");
@@ -48,8 +60,15 @@ begin.on("click", function (event) {
   }, 1000);
 });
 
+/**
+ * Upon clicking inside the questions...
+ * Runs through the buttonArray, making sure nothing is undefined
+ * And making sure a button is pressed
+ * If it is, then the current section is made invisible and
+ * the next immediate section is made visible
+ */
 container.on("click", function (event) {
-  // console.log("Clicks");
+  // General use variables
   const element = $(event.target).parent();
   const button = $(event.target);
   const win = $(".win");
@@ -66,8 +85,11 @@ container.on("click", function (event) {
        element.css("display", "none");
     }
   }
+  /**
+   * If the answer is correct, it shows so and adds to the score
+   * If it is not, it subtracts time from the timer
+   */
   if (button.is(".correct")) {
-    // console.log("correct");
     win.css("display", "inline");
     setTimeout(function () {
       win.css("display", "none");
@@ -76,7 +98,6 @@ container.on("click", function (event) {
     );
     return score++;
   } else if (button.is(".incorrect")) {
-    // console.log("incorrect");
     lose.css("display", "inline");
     setTimeout(function () {
       lose.css("display", "none");
@@ -88,13 +109,16 @@ container.on("click", function (event) {
   }
 });
 
-
+/**
+ * A function, to setup an interval
+ * Said interval constantly checks for the end, to submit the
+ * final score and end the interval
+ */
 function throughEnd() {
 const findEnd = setInterval(() => {
   const endTime = end.data("visible");
   const countdown = time.text();
   if (endTime === "visible") {
-    // console.log("done");
     clearInterval(findEnd);
     const finish = countdown * score;
     let highscore = finish;
@@ -104,6 +128,13 @@ const findEnd = setInterval(() => {
 }, 1000);
   }
 
+  /**
+   * On click of the submission button...
+   * Pushes the score to the submitArray so it can
+   * be shown on the highscore board.
+   * Mostly resets everything to initial values
+   * afterwards.
+   */
 submission.on("click", () => {
   const inputText = initials.val();
   const inputNumber = finalScore.text();
@@ -124,6 +155,7 @@ submission.on("click", () => {
   return;
 });
 
+// Shows Quiz Page; Hides HS Page
 qpLink.on("click", () => {
   if (hp.css("display", "inline")) {
     // console.log("HP Shown");
@@ -132,6 +164,7 @@ qpLink.on("click", () => {
   }
 });
 
+// Shows HS Page; Hides Quiz Page
 hpLink.on("click", () => {
   if (qp.css("display", "inline")) {
     // console.log("QP Shown");
