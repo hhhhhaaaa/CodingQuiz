@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./public/index.css">
+    <link rel="stylesheet" href="./public/bootstrap.css">
+
+</head>
+
+<body>
+    <section class="container quizPage">
+        <nav class="navbar">
+            <p class=" col-6 text-left hpLink">
+                HighScores
+            </p>
+            <p class=" col-3 text-right">
+                Time Left:
+                <div class="col-3 time text-right">60</div>
+            </p>
+        </nav>
+        <section id="begin" class="section col-12 text-center" data-type="information" data-visible="visible">
+            <h1>Coding Challenge Quiz</h1>
+            <p>Answer these questions as fast as you can!</p>
+            <button class="btn btn-primary center-block">
+                Begin
+            </button>
+        </section>
+        <section id="question1" class="section text-center" data-type="question" data-visible="hidden">
+            <h1>What number do arrays start counting with?</h1>
+            <button class="incorrect bttn">1.) -1</button>
+            <button class="correct bttn">2.) 0</button>
+            <button class="incorrect bttn">3.) 1</button>
+            <button class="incorrect bttn">4.) 2</button>
+        </section>
+        <section id="question2" class="section text-center" data-type="question" data-visible="hidden">
+            <h1>Which of these is not a loop?</h1>
+            <button class="incorrect bttn">1.) for</button>
+            <button class="incorrect bttn">2.) for...in</button>
+            <button class="incorrect bttn">3.) while</button>
+            <button class="correct bttn">4.) array</button>
+        </section>
+        <section id="question3" class="section text-center" data-type="question" data-visible="hidden">
+            <h1>Which of these is not falsey values?</h1>
+            <button class="incorrect bttn">1.) undefined</button>
+            <button class="correct bttn">2.) none</button>
+            <button class="incorrect bttn">3.) false</button>
+            <button class="incorrect bttn">4.) null</button>
+        </section>
+        <section id="question4" class="section text-center" data-type="question" data-visible="hidden">
+            <h1>Which of these does not establish a variable?</h1>
+            <button class="correct bttn">1.) for</button>
+            <button class="incorrect bttn">2.) var</button>
+            <button class="incorrect bttn">3.) let</button>
+            <button class="incorrect bttn">4.) const</button>
+        </section>
+        <section id="question5" class="section text-center" data-type="question" data-visible="hidden">
+            <h1>What is not one of the three languages we are using to code?</h1>
+            <button class="correct bttn">1.) Python</button>
+            <button class="incorrect bttn">2.) Javascript</button>
+            <button class="incorrect bttn">3.) HTML</button>
+            <button class="incorrect bttn">4.) CSS</button>
+        </section>
+        <section id="end" class="section text-center" data-type="information" data-visible="hidden">
+            <p>
+                Congratulations!
+                <br>
+                Please submit your initials for the highscore board.
+                <br>
+                Your final score is:
+            </p>
+            <div class="highscore"></div>
+            <label for="initials">Initials:</label>
+            <input type="text" id="initials">
+            <input type="submit" id="submission">
+        </section>
+        <br>
+        <section class="lose text-center" data-visible="hidden">
+            <p>
+                Wrong
+            </p>
+        </section>
+        <section class="win text-center" data-visible="hidden">
+            <p>
+                Right
+            </p>
+        </section>
+    </section>
+    <section class="highscoresPage container text-center">
+        <nav>
+            <p class="qpLink text-left">
+                Main
+            </p>
+            <p class="clear text-right">
+                Clear Scores
+            </p>
+        </nav>
+        <h1>Highscores</h1>
+        <div id="scoreboard"></div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../public/index.js"></script>
+</body>
+
+</html>
